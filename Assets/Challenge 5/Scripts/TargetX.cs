@@ -31,6 +31,10 @@ public class TargetX : MonoBehaviour
     {
         if (gameManagerX.isGameActive)
         {
+            if (gameObject.CompareTag("Bad"))
+            {
+                gameManagerX.GameOver();
+            }
             Destroy(gameObject);
             gameManagerX.UpdateScore(pointValue);
             Explode();

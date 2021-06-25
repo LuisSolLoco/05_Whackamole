@@ -23,9 +23,21 @@ public class GameManagerX : MonoBehaviour
     private float minValueY = -3.75f; //  y value of the center of the bottom-most square
     
     // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
-    public void StartGame()
+    public void StartGame(string difficulty)
     {
-        spawnRate /= 5;
+        switch (difficulty)
+        {
+            case "Easy Button":
+                spawnRate /= 2;
+                break;
+            case "Medium Button":
+                spawnRate /= 5;
+                break;
+            case "Hard Button":
+                spawnRate /= 10;
+                break;
+        }
+        Debug.Log(spawnRate);
         isGameActive = true;
         StartCoroutine(SpawnTarget());
         score = 0;
