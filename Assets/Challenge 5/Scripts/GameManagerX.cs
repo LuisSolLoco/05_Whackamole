@@ -37,7 +37,7 @@ public class GameManagerX : MonoBehaviour
                 spawnRate /= 10;
                 break;
         }
-        Debug.Log(spawnRate);
+
         isGameActive = true;
         StartCoroutine(SpawnTarget());
         score = 0;
@@ -82,7 +82,7 @@ public class GameManagerX : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = "score";
+        scoreText.text = "score: " + score;
     }
 
     // Stop game, bring up game over text and restart button
